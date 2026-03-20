@@ -4,9 +4,27 @@ hrms-backend/.venv/
 hrms-backend/__pycache__/
 hrms-backend/*.pyc
 hrms-backend/.env
+hrms-backend/routers/__pycache__/
 
 # Frontend 
 hrms-frontend/node_modules/
 hrms-frontend/build/
 hrms-frontend/.env
 
+# Node modules
+hrms-frontend/node_modules/
+
+# Build output
+hrms-frontend/dist/
+hrms-frontend/.parcel-cache/
+
+# Logs
+hrms-frontend/npm-debug.log*
+hrms-frontend/yarn-debug.log*
+hrms-frontend/yarn-error.log*
+
+
+
+hrms-frontend/.DS_Store
+hrms-frontend/.vscode/
+hrms-frontend/.idea/
