@@ -17,7 +17,8 @@ def create_employee(emp: schemas.EmployeeCreate, db: Session = Depends(get_db)):
     ).first()
 
     if existing:
-        raise HTTPException(status_code=400, detail="Employee already exists")
+        raise HTTPException(
+            status_code=400, detail="Employee already exists (Either Employee ID or Employee email already exists).")
 
     new_emp = models.Employee(**emp.dict())
     db.add(new_emp)
@@ -38,7 +39,9 @@ def delete_employee(emp_id: int, db: Session = Depends(get_db)):
 
     if not emp:
         raise HTTPException(status_code=404, detail="Employee not found")
-
+    db.query(models.Attendance).filter(
+        models.Attendance.employee_id == emp_id
+    ).delete()
     db.delete(emp)
     db.commit()
 
