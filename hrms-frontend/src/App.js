@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import EmployeePage from "./pages/EmployeePage";
+import AttendancePage from "./pages/AttendancePage";
 
 export default function App() {
   const [page, setPage] = useState("employees");
@@ -13,7 +14,7 @@ export default function App() {
 
       <hr />
 
-
+      {page === "employees" ? <EmployeePage /> : <AttendancePage />}
     </div>
   );
 }
