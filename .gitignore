@@ -5,6 +5,7 @@ hrms-backend/__pycache__/
 hrms-backend/*.pyc
 hrms-backend/.env
 hrms-backend/routers/__pycache__/
+hrms-backend/core/__pycache__
 
 # Frontend 
 hrms-frontend/node_modules/

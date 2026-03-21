@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import models
 from database import engine
 from routers import employee, attendance
+from core.exception_handlers import register_exception_handlers
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -17,6 +18,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+register_exception_handlers(app)
 
 app.include_router(employee.router)
 app.include_router(attendance.router)

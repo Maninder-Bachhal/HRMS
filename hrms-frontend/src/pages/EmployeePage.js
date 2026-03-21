@@ -69,6 +69,7 @@ const cellStyle = {
             <th style={cellStyle}>Emp. ID</th>
             <th style={cellStyle}>Name</th>
             <th style={cellStyle}>Department</th>
+            <th style={cellStyle}>Email</th>
             <th style={cellStyle}>Delete Employee</th>
           </tr>
         </thead>
@@ -79,6 +80,7 @@ const cellStyle = {
               <td style={cellStyle}>{emp.employee_id}</td>
               <td style={cellStyle}>{emp.full_name}</td>
               <td style={cellStyle}>{emp.department}</td>
+              <td style={cellStyle}>{emp.email}</td>
               <td style={cellStyle}><button onClick={() => { deleteEmployee(emp.id); fetchEmployees(); }}>
               Delete
               </button></td>
