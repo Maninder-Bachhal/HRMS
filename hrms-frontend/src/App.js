@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial" }}>
-      <h1>HRMS Lite</h1>
+      <h1>HRMS</h1>
 
       <button onClick={() => setPage("employees")}>Employees</button>
       <button onClick={() => setPage("attendance")}>Attendance</button>

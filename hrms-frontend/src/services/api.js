@@ -35,7 +35,12 @@ export const markAttendance = async (data) => {
   return res.json();
 };
 
-export const getAttendance = async (employeeId) => {
-  const res = await fetch(`${BASE_URL}/attendance/${employeeId}`);
+export const getAttendance = async (employeeId, date) => {
+  let url = `${BASE_URL}/attendance?`;
+
+  if (employeeId) url += `employee_id=${employeeId}&`;
+  if (date) url += `attendance_date=${date}`;
+
+  const res = await fetch(url);
   return res.json();
 };

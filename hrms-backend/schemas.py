@@ -17,7 +17,7 @@ class EmployeeResponse(EmployeeCreate):
 
 
 class AttendanceCreate(BaseModel):
-    employee_id: int
+    employee_id: str
     date: date
     status: str   # Present / Absent
 

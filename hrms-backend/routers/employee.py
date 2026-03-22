@@ -33,9 +33,9 @@ def get_employees(db: Session = Depends(get_db)):
 
 
 @router.delete("/{emp_id}")
-def delete_employee(emp_id: int, db: Session = Depends(get_db)):
+def delete_employee(emp_id: str, db: Session = Depends(get_db)):
     emp = db.query(models.Employee).filter(
-        models.Employee.id == emp_id).first()
+        models.Employee.employee_id == emp_id).first()
 
     if not emp:
         raise HTTPException(status_code=404, detail="Employee not found")
