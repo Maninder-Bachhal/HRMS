@@ -18,16 +18,20 @@ export default function AttendancePage() {
       alert("Please select employee and date");
       return;
     }
-
-    await markAttendance({
-      employee_id: selected,
-      date,
-      status,
-    });
+    try {
+      await markAttendance({
+        employee_id: selected,
+        date,
+         status,
+         });
    
-    alert("Attendance marked ");
-  };
-
+        alert("Attendance marked ");
+        }
+        catch (error) {
+             alert(error.message);  
+        }
+      };
+  
   const fetchAttendance = async () => {
     if (!selected && !date) {
       alert("Select employee or date");

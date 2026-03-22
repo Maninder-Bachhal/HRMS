@@ -32,7 +32,13 @@ export const markAttendance = async (data) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  return res.json();
+  const result = await res.json();
+  if (!res.ok) {
+    throw new Error(result.message || "Something went wrong");
+  }
+
+  return result;
+  
 };
 
 export const getAttendance = async (employeeId, date) => {
